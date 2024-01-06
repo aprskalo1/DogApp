@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import hr.algebra.dogapp.databinding.ActivitySplashScreenBinding
+import hr.algebra.dogapp.framework.startActivity
 
 private const val SPLASH_SCREEN_DURATION = 3000L
 
@@ -28,8 +29,4 @@ class SplashScreenActivity : AppCompatActivity() {
             SPLASH_SCREEN_DURATION
         )
     }
-
-    inline fun <reified T : Activity> Context.startActivity() =
-        startActivity(Intent(this, T::class.java)
-            .apply { addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) })
 }

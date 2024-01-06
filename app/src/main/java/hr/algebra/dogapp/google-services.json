@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "531304702332",
+    "project_id": "dogapp-c1f65",
+    "storage_bucket": "dogapp-c1f65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531304702332:android:c55a59851484c3f4f384f9",
+        "android_client_info": {
+          "package_name": "hr.algebra.dogapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnOfQo07YoDtefnqbbul-bGS3CO_76g3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -38,13 +38,18 @@ fun Context.isOnline(): Boolean {
     }
 }
 
-//this has to be changed since it will be used for storing logged in user
-fun Context.setBooleanPreference(key: String, value: Boolean = true) =
+fun Context.setStringPreference(key: String, value: String?) =
     PreferenceManager.getDefaultSharedPreferences(this)
         .edit()
-        .putBoolean(key, value)
+        .putString(key, value)
         .apply()
 
-fun Context.getBooleanPreference(key: String, defaultValue: Boolean = false) =
+fun Context.getStringPreference(key: String, defaultValue: String? = null): String? =
     PreferenceManager.getDefaultSharedPreferences(this)
-        .getBoolean(key, defaultValue)
+        .getString(key, defaultValue)
+
+fun Context.userExists(): Boolean {
+    val email = getStringPreference("email")
+    return !email.isNullOrBlank()
+}
+

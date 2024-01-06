@@ -2,4 +2,16 @@
     <string name="app_name">DogApp</string>
     <string name="your_favorite_dog_app">Your favorite dog app</string>
     <string name="no_internet_connection">No internet connection...</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="not_registered_yet_sign_up">Not registered yet? Sign Up!</string>
+    <string name="sign_up">Sign up</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="already_registered_sign_in">Already registered? Sign in!</string>
+    <string name="password_not_matching">Password not matching.</string>
+    <string name="empty_fields_are_not_allowed">Empty fields are not allowed</string>
+    <string name="error_occurred">Error occurred</string>
+    <string name="user_created">User created</string>
+    <string name="sign_in_failed">Sign In Failed</string>
 </resources>

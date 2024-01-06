@@ -11,6 +11,7 @@ import hr.algebra.dogapp.databinding.ActivitySplashScreenBinding
 import hr.algebra.dogapp.framework.callDelayed
 import hr.algebra.dogapp.framework.isOnline
 import hr.algebra.dogapp.framework.startActivity
+import hr.algebra.dogapp.framework.userExists
 
 private const val SPLASH_SCREEN_DURATION = 3000L
 
@@ -25,16 +26,16 @@ class SplashScreenActivity : AppCompatActivity() {
 
     private fun redirectToMainActivity() {
         if (isOnline()) {
-            callDelayed(
-                SPLASH_SCREEN_DURATION
-            ) {
-                startActivity<HostActivity>()
+            callDelayed(SPLASH_SCREEN_DURATION) {
+                if (userExists()) {
+                    startActivity<HostActivity>()
+                } else {
+                    startActivity<SignInActivity>()
+                }
             }
         } else {
             binding.tvSplashScreen.text = getString(R.string.no_internet_connection)
-            callDelayed(
-                SPLASH_SCREEN_DURATION
-            ) {
+            callDelayed(SPLASH_SCREEN_DURATION) {
                 finish()
             }
         }

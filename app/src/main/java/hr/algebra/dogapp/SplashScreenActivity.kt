@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import hr.algebra.dogapp.databinding.ActivitySplashScreenBinding
+import hr.algebra.dogapp.framework.callDelayed
+import hr.algebra.dogapp.framework.isOnline
 import hr.algebra.dogapp.framework.startActivity
 
 private const val SPLASH_SCREEN_DURATION = 3000L
@@ -22,11 +24,19 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun redirectToMainActivity() {
-        Handler(Looper.getMainLooper()).postDelayed(
-            {
+        if (isOnline()) {
+            callDelayed(
+                SPLASH_SCREEN_DURATION
+            ) {
                 startActivity<HostActivity>()
-            },
-            SPLASH_SCREEN_DURATION
-        )
+            }
+        } else {
+            binding.tvSplashScreen.text = getString(R.string.no_internet_connection)
+            callDelayed(
+                SPLASH_SCREEN_DURATION
+            ) {
+                finish()
+            }
+        }
     }
 }

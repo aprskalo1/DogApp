@@ -52,4 +52,10 @@ fun Context.userExists(): Boolean {
     val email = getStringPreference("email")
     return !email.isNullOrBlank()
 }
+fun Context.clearPreferences() {
+    PreferenceManager.getDefaultSharedPreferences(this)
+        .edit()
+        .clear()
+        .apply()
+}
 

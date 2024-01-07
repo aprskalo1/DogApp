@@ -17,10 +17,15 @@
         tools:targetApi="31">
         <activity
             android:name=".SignUpActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SignInActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".HostActivity"
             android:exported="false" />

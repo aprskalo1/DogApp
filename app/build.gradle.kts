@@ -69,4 +69,7 @@ dependencies {
     //picasso
     implementation("com.squareup.picasso:picasso:2.71828")
     implementation("jp.wasabeef:picasso-transformations:2.4.0")
+
+    //glide
+    implementation("com.github.bumptech.glide:glide:4.12.0")
 }

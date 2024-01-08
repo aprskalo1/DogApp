@@ -1,6 +1,7 @@
 package hr.algebra.dogapp.framework
 
 import android.app.Activity
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -15,6 +16,11 @@ inline fun <reified T : Activity> Context.startActivity() =
     startActivity(
         Intent(this, T::class.java)
             .apply { addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) })
+
+inline fun <reified T : BroadcastReceiver> Context.sendBroadcast() =
+    sendBroadcast(
+        Intent(this, T::class.java)
+    )
 
 fun callDelayed(delay: Long, work: () -> Unit) {
     Handler(Looper.getMainLooper()).postDelayed(
@@ -52,6 +58,7 @@ fun Context.userExists(): Boolean {
     val email = getStringPreference("email")
     return !email.isNullOrBlank()
 }
+
 fun Context.clearPreferences() {
     PreferenceManager.getDefaultSharedPreferences(this)
         .edit()

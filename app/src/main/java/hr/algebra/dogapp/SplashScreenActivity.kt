@@ -2,16 +2,12 @@ package hr.algebra.dogapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.work.ExistingWorkPolicy
-import androidx.work.OneTimeWorkRequest
-import androidx.work.WorkManager
 import hr.algebra.dogapp.databinding.ActivitySplashScreenBinding
 import hr.algebra.dogapp.framework.callDelayed
 import hr.algebra.dogapp.framework.isOnline
 import hr.algebra.dogapp.framework.sendBroadcast
 import hr.algebra.dogapp.framework.startActivity
 import hr.algebra.dogapp.framework.userExists
-import hr.algebra.dogapp.network.BreedWorker
 
 private const val SPLASH_SCREEN_DURATION = 3000L
 

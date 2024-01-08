@@ -8,10 +8,46 @@
     tools:context=".fragment.HomeFragment">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Home fragment"
-        />
+        android:gravity="center"
+        android:paddingBottom="@dimen/_25dp"
+        android:text="@string/randomize"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_35sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/_25dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/choose_your_breed"
+            android:textSize="@dimen/_20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerBreed"
+            android:layout_width="@dimen/_150dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/btnRandomize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/randomize" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivRandomDog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

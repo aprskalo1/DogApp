@@ -19,4 +19,6 @@
     <string name="favourites">Favourites</string>
     <string name="logout">Logout</string>s
     <string name="about">This is an app made for dog lovers by A.P. Find your favourite dogs and add them to the favourites.</string>
+    <string name="randomize">Randomize</string>
+    <string name="choose_your_breed">Choose</string>
 </resources>

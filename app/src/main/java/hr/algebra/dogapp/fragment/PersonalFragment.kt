@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import hr.algebra.dogapp.HostActivity
-import hr.algebra.dogapp.R
 import hr.algebra.dogapp.SignInActivity
 import hr.algebra.dogapp.databinding.FragmentPersonalBinding
 import hr.algebra.dogapp.framework.clearPreferences
@@ -26,15 +24,18 @@ class PersonalFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        init()
+        initUser()
+        initListeners()
+    }
 
+    private fun initListeners() {
         binding.btnLogout.setOnClickListener {
             context?.clearPreferences()
             context?.startActivity<SignInActivity>()
         }
     }
 
-    private fun init() {
+    private fun initUser() {
         val email = context?.getStringPreference("email")
         binding.tvWelcome.text = "Welcome, $email"
     }

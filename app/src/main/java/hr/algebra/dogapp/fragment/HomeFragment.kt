@@ -33,7 +33,10 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initSpinner()
+        initRandomDogImage()
+    }
 
+    private fun initRandomDogImage() {
         binding.btnRandomize.setOnClickListener {
             val spinner: Spinner = binding.spinnerBreed
             val breed = spinner.selectedItem.toString()

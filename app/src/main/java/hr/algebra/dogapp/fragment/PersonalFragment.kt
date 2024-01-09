@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import hr.algebra.dogapp.R
 import hr.algebra.dogapp.SignInActivity
 import hr.algebra.dogapp.databinding.FragmentPersonalBinding
 import hr.algebra.dogapp.framework.clearPreferences
@@ -16,7 +17,7 @@ class PersonalFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentPersonalBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -37,6 +38,6 @@ class PersonalFragment : Fragment() {
 
     private fun initUser() {
         val email = context?.getStringPreference("email")
-        binding.tvWelcome.text = "Welcome, $email"
+        binding.tvWelcome.text = getString(R.string.welcome, email)
     }
 }

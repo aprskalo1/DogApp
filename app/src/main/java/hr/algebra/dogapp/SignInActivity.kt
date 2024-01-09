@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import hr.algebra.dogapp.databinding.ActivitySignInBinding
-import hr.algebra.dogapp.framework.getStringPreference
 import hr.algebra.dogapp.framework.setStringPreference
 import hr.algebra.dogapp.framework.startActivity
 

@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import hr.algebra.dogapp.network.BreedFetcher
 
+@Suppress("UNCHECKED_CAST")
 class BreedViewModelFactory(private val  context: Context) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(BreedViewModel::class.java)) {

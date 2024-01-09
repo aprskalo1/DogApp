@@ -1,5 +1,6 @@
 package hr.algebra.dogapp
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.work.ExistingWorkPolicy
@@ -8,13 +9,13 @@ import androidx.work.WorkManager
 import hr.algebra.dogapp.databinding.ActivitySplashScreenBinding
 import hr.algebra.dogapp.framework.callDelayed
 import hr.algebra.dogapp.framework.isOnline
-import hr.algebra.dogapp.framework.sendBroadcast
 import hr.algebra.dogapp.framework.startActivity
 import hr.algebra.dogapp.framework.userExists
 import hr.algebra.dogapp.network.BreedWorker
 
 private const val SPLASH_SCREEN_DURATION = 3000L
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {

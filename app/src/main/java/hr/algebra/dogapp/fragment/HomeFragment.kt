@@ -56,7 +56,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initSpinner() {
-        val breedViewModelFactory = BreedViewModelFactory()
+        val breedViewModelFactory = BreedViewModelFactory(requireContext())
         breedViewModel =
             ViewModelProvider(this, breedViewModelFactory).get(BreedViewModel::class.java)
 

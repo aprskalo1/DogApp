@@ -17,9 +17,10 @@ inline fun <reified T : Activity> Context.startActivity() =
         Intent(this, T::class.java)
             .apply { addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) })
 
-inline fun <reified T : BroadcastReceiver> Context.sendBroadcast() =
+inline fun <reified T : BroadcastReceiver> Context.sendBroadcast(boolean: Boolean) =
     sendBroadcast(
         Intent(this, T::class.java)
+            .apply { putExtra("apiStatusActive", boolean) }
     )
 
 fun callDelayed(delay: Long, work: () -> Unit) {

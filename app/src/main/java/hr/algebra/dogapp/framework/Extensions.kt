@@ -4,13 +4,22 @@ import android.app.Activity
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities.TRANSPORT_CELLULAR
 import android.net.NetworkCapabilities.TRANSPORT_WIFI
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
+import android.widget.Toast
 import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
+import com.bumptech.glide.Glide
+import hr.algebra.dogapp.R
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import java.io.File
+import java.io.FileOutputStream
 
 inline fun <reified T : Activity> Context.startActivity() =
     startActivity(
@@ -42,6 +51,39 @@ fun Context.isOnline(): Boolean {
             }
         }
         return false
+    }
+}
+
+fun Context.saveImage(
+    context: Context,
+    imageUrl: String,
+    fileName: String,
+    dirPath: String
+) {
+    GlobalScope.launch {
+        try {
+            val bitmap = Glide.with(this@saveImage)
+                .asBitmap()
+                .load(imageUrl)
+                .submit()
+                .get()
+
+            val dir = File(dirPath)
+            if (!dir.exists()) dir.mkdirs()
+
+            val file = File("$dirPath/$fileName")
+            val out = FileOutputStream(file)
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out)
+            out.flush()
+            out.close()
+            val handler = Handler(Looper.getMainLooper())
+            handler.post {
+                Toast.makeText(context, getString(R.string.image_saved), Toast.LENGTH_SHORT)
+                    .show()
+            }
+        } catch (e: Exception) {
+            Log.e("saveImage", e.message, e)
+        }
     }
 }
 

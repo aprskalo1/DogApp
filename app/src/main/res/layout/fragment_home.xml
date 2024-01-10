@@ -45,10 +45,24 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/ivRandomDog"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"/>
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivRandomDog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/ivAddToFavourites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:clickable="true"
+            android:src="@drawable/baseline_star_24" />
+
+    </FrameLayout>
 
 </LinearLayout>

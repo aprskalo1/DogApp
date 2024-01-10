@@ -22,4 +22,6 @@
     <string name="randomize">Randomize</string>
     <string name="choose_your_breed">Choose</string>
     <string name="welcome">Welcome, %1$s</string>
+    <string name="save">save</string>
+    <string name="image_saved">Image saved</string>
 </resources>

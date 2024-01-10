@@ -18,7 +18,7 @@
         <receiver
             android:name=".DogReceiver"
             android:enabled="true"
-            android:exported="false"></receiver>
+            android:exported="false" />
 
         <activity
             android:name=".SignUpActivity"

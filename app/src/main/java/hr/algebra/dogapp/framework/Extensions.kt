@@ -16,6 +16,8 @@ import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
 import com.bumptech.glide.Glide
 import hr.algebra.dogapp.R
+import hr.algebra.dogapp.model.DogEntity
+import hr.algebra.dogapp.model.DogItem
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.io.File
@@ -107,5 +109,20 @@ fun Context.clearPreferences() {
         .edit()
         .clear()
         .apply()
+}
+
+fun DogItem.toDogEntity(id: String): DogEntity {
+    return DogEntity(
+        id,
+        message,
+        status
+    )
+}
+
+fun DogEntity.toDogItem(): DogItem {
+    return DogItem(
+        message,
+        status
+    )
 }
 

@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
             val spinner: Spinner = binding.spinnerBreed
             val breed = spinner.selectedItem.toString()
 
-            val dogViewModelFactory = DogViewModelFactory()
+            val dogViewModelFactory = DogViewModelFactory(requireContext())
             dogViewModel =
                 ViewModelProvider(this, dogViewModelFactory).get(DogViewModel::class.java)
 
